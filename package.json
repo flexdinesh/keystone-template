@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "keystone dev --seed-data",
     "start": "keystone start --seed-data",
-    "build": "keystone build"
+    "build": "keystone build",
+    "postinstall": "keystone postinstall"
   },
   "dependencies": {
     "@keystone-6/core": "^2.0.0"
