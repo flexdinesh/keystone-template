@@ -1,27 +1,26 @@
 {
-    "name": "keystone-codesandbox-template",
-    "version": "0.0.1",
-    "license": "MIT",
-    "author": "Dinesh Pandiyan <flexdinesh@gmail.com>",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/flexdinesh/keystone-codesandbox-template"
-      },
-    "scripts": {
-      "dev": "keystone dev --seed-data",
-      "start": "keystone start",
-      "build": "keystone build"
-    },
-    "dependencies": {
-      "@keystone-6/core": "^2.0.0"
-    },
-    "devDependencies": {
-      "typescript": "^4.7.4"
-    },
-    "engines": {
-      "node": "^14.15 || ^16.13"
-    },
-    "keywords": [],
-    "description": ""
-  }
-  
+  "name": "keystone-template",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Dinesh Pandiyan <flexdinesh@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flexdinesh/keystone-template"
+  },
+  "scripts": {
+    "dev": "keystone dev --seed-data",
+    "start": "keystone start --seed-data",
+    "build": "keystone build"
+  },
+  "dependencies": {
+    "@keystone-6/core": "^2.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": "^14.15 || ^16.13"
+  },
+  "keywords": [],
+  "description": ""
+}

@@ -48,7 +48,10 @@ const seedTasks = async (context: Context) => {
     try {
       const queriedTasks = await query.Task.findMany({
         where: {
-          AND: [{ label: { equals: task.label } }, { finishBy: { equals: task.finishBy } }],
+          AND: [
+            { label: { equals: task.label } },
+            { finishBy: { equals: task.finishBy } },
+          ],
         },
       });
 
