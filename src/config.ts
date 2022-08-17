@@ -1,7 +1,9 @@
-import type { KeystoneConfig, BaseKeystoneTypeInfo } from "@keystone-6/core/types";
+import type {
+  KeystoneConfig,
+  BaseKeystoneTypeInfo,
+} from "@keystone-6/core/types";
 import { session } from "./auth";
 import { lists } from "./schema";
-
 import { seedDatabase } from "./seed";
 import { Context, TypeInfo } from ".keystone/types";
 
@@ -18,6 +20,7 @@ const db: KeystoneConfig<TypeInfo>["db"] = {
 };
 
 const ui: KeystoneConfig<TypeInfo>["ui"] = {
+  // only signed in users should have access to adminui
   isAccessAllowed: (context) => !!context.session?.data,
 };
 
