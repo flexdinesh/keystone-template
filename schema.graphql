@@ -146,6 +146,7 @@ type User {
   id: ID!
   email: String
   name: String
+  password: PasswordState
   tasks(
     where: TaskWhereInput! = {}
     orderBy: [TaskOrderByInput!]! = []
@@ -153,6 +154,10 @@ type User {
     skip: Int! = 0
   ): [Task!]
   tasksCount(where: TaskWhereInput! = {}): Int
+}
+
+type PasswordState {
+  isSet: Boolean!
 }
 
 input UserWhereUniqueInput {
@@ -167,7 +172,12 @@ input UserWhereInput {
   id: IDFilter
   email: StringFilter
   name: StringFilter
+  password: PasswordFilter
   tasks: TaskManyRelationFilter
+}
+
+input PasswordFilter {
+  isSet: Boolean!
 }
 
 input TaskManyRelationFilter {
@@ -185,6 +195,7 @@ input UserOrderByInput {
 input UserUpdateInput {
   email: String
   name: String
+  password: String
   tasks: TaskRelateToManyForUpdateInput
 }
 
@@ -203,6 +214,7 @@ input UserUpdateArgs {
 input UserCreateInput {
   email: String
   name: String
+  password: String
   tasks: TaskRelateToManyForCreateInput
 }
 

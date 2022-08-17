@@ -25,8 +25,9 @@ model Task {
 }
 
 model User {
-  id    String @id @default(cuid())
-  email String @unique @default("")
-  name  String @default("")
-  tasks Task[] @relation("Task_assignedTo")
+  id       String  @id @default(cuid())
+  email    String  @unique @default("")
+  name     String  @default("")
+  password String?
+  tasks    Task[]  @relation("Task_assignedTo")
 }

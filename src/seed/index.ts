@@ -5,7 +5,7 @@ import { Context } from ".keystone/types";
 const seedUsers = async (context: Context) => {
   const { query } = context.sudo();
   const rawJSONData = fs.readFileSync(
-    path.join(process.cwd(), "seed", "./users.json"),
+    path.join(process.cwd(), "./src/seed/users.json"),
     "utf-8"
   );
   const seedUsers = JSON.parse(rawJSONData);
@@ -23,6 +23,7 @@ const seedUsers = async (context: Context) => {
           data: {
             email: user.email,
             name: user.name,
+            password: user.password || 'passw0rd',
           },
         });
       }
@@ -39,7 +40,7 @@ const seedUsers = async (context: Context) => {
 const seedTasks = async (context: Context) => {
   const { query } = context.sudo();
   const rawJSONData = fs.readFileSync(
-    path.join(process.cwd(), "seed", "./tasks.json"),
+    path.join(process.cwd(), "./src/seed/tasks.json"),
     "utf-8"
   );
   const seedTasks = JSON.parse(rawJSONData);

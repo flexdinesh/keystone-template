@@ -1,19 +1,22 @@
 import { config } from "@keystone-6/core";
-import { lists } from "./schema";
-import { seedDatabase } from "./seed";
-import { Context } from ".keystone/types";
+import type {
+  KeystoneConfig,
+  BaseKeystoneTypeInfo,
+} from "@keystone-6/core/types";
+import { db, lists, session, ui } from "./src/config";
+import { withAuth } from "./src/auth";
 
 export default config({
-  db: {
-    provider: "sqlite",
-    // migrations are optional only in dev environments
-    useMigrations: process.argv.includes("--skip-migrations") ? false : true,
-    url: process.env.DATABASE_URL || "file:./keystone-example.db",
-    async onConnect(context: Context) {
-      if (process.argv.includes("--seed-data")) {
-        await seedDatabase(context);
-      }
-    },
-  },
+  db,
   lists,
 });
+
+// To add authentication, use the config below
+// export default withAuth(
+//   config({
+//     db,
+//     lists,
+//     session,
+//     ui,
+//   }) as KeystoneConfig<BaseKeystoneTypeInfo>
+// );

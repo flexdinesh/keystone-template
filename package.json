@@ -8,15 +8,16 @@
     "url": "https://github.com/flexdinesh/keystone-template"
   },
   "scripts": {
-    "dev": "keystone dev --seed-data --skip-migrations",
-    "start": "keystone start --seed-data",
+    "dev": "keystone dev --seed-database --skip-migrations",
+    "start": "keystone start --seed-database",
     "migrate:create": "keystone prisma migrate dev",
     "migrate:deploy": "keystone prisma migrate deploy",
-    "build": "keystone build",
-    "postinstall": "keystone postinstall"
+    "build": "keystone build"
   },
   "dependencies": {
-    "@keystone-6/core": "^2.0.0"
+    "@keystone-6/auth": "^4.0.0",
+    "@keystone-6/core": "^2.0.0",
+    "@keystone-ui/core": "^5.0.0"
   },
   "devDependencies": {
     "typescript": "^4.7.4"

@@ -1,5 +1,8 @@
 [
   { "name": "Bruce Wayne", "email": "bruce@email.com" },
-  { "name": "Diana Prince", "email": "diana@email.com" },
+  {
+    "name": "Diana Prince",
+    "email": "diana@email.com"
+  },
   { "name": "Clark Kent", "email": "clark@email.com" }
 ]
